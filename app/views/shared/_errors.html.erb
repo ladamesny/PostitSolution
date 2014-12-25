@@ -1,0 +1,12 @@
+<% if object.errors.any? %>
+  <div class="row">
+    <div class="alert alert-error span8">
+      <h5 style="margin-left:5px;">Changes could not be saved because of the following <%=pluralize_without_count(object.errors.count, 'error')%>:</h5>
+        <ul>
+          <% object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+<%end%>

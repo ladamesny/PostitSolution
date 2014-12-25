@@ -1,0 +1,9 @@
+<%= render 'shared/content_title', title: "Create New Category" %>
+
+<div class="well">
+<%= render 'shared/errors', object: @category %>
+  <%=bootstrap_form_for @category do |f| %>
+    <%=f.text_field :name%>
+  <%= f.submit "Create Category", class: "btn btn-success" %>
+<% end %>
+</div>
