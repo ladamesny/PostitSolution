@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @same_user = same_user?
   end
 
   def new
@@ -67,6 +68,14 @@ class PostsController < ApplicationController
       redirect_to posts_path
     end
     
+  end
+
+  def same_user?
+    if current_user == @post.creator
+      true
+    else
+      false
+    end    
   end
 
 end

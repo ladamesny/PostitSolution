@@ -20,7 +20,9 @@
     <% cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text} %>
     <% end %>
     </div>
-  <%= f.submit(@post.new_record? ? 'Create Post' : 'Update Post', class: 'btn btn-primary')%>
-  <%= link_to 'Cancel', post_path(@post), class: "btn btn-warning" %>
+    <div class="control-group" style="margin-top:20px;">
+      <%= f.submit(@post.new_record? ? 'Create Post' : 'Update Post', class: 'btn btn-small btn-primary')%>
+      <%= link_to 'Cancel', posts_path, class: "btn btn-small btn-warning", style:"margin-left:20px;" %>
+    </div>
 <% end %>
 </div>

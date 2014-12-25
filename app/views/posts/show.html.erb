@@ -4,7 +4,9 @@
   <%= render @post.categories %> 
 </p>
   <% if logged_in? %>
-    <%=link_to 'Edit Post', edit_post_path(@post), class: "btn btn-warning btn-small pull-right", style: "font-weight:bold; color:black;"%>
+    <% if @same_user %>
+    <%=link_to 'Edit your post?', edit_post_path(@post), class: "btn btn-danger btn-small pull-right", style: "font-weight:bold;"%>
+    <%end%>  
   <%end%>
 <% title = (render 'shared/content_title', title: @post.title).html_safe %> 
 <%= link_to title, fix_url(@post.url), target: '_blank', help: "External Link to post url" %>  
@@ -18,7 +20,7 @@
   <%= bootstrap_form_for([@post, @comment]) do |f| %>
   <%= render 'shared/errors', object: @comment %>
     <%= f.text_area :body, label: 'Add a Comment', rows: 3, class: 'span8' %>
-    <%= f.submit 'Create comment', class: "btn btn-primary" %>
+    <%= f.submit 'Create comment', class: "btn btn-small btn-primary" %>
   <% end %>
 <% end %>
 
@@ -32,6 +34,13 @@
 <% end %>
 <br/>
 
-<div class="nav_item" style:"float:left;">
+
+<div class="container">
+  <div style="position:absolute;"> 
+    <div class="row">
+      <div class="col-lg-12">
   <%= link_to 'Back', posts_path, class: "btn btn-primary btn-small" %>
-</div> 
+     </div>
+    </div>
+  </div>  
+</div>
