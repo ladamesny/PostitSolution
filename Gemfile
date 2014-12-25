@@ -9,7 +9,7 @@ gem 'bootstrap_form'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'jquery-rails'
 gem 'turbolinks'
