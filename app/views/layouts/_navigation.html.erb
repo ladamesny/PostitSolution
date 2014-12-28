@@ -31,8 +31,8 @@
     <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
   </div >
   <div class="btn-group nav_item">
-    <%= link_to('', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown') do %>
-
+    <%= link_to('', class: 'btn btn-small btn-primary dropdown-toggle', 'data-toggle' => 'dropdown') do %>
+    <i class="icon-user icon-white"></i>
     <%=current_user.username %>
       <span class="caret"></span>
     <% end %>
