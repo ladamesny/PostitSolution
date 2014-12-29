@@ -28,7 +28,7 @@
   <h5 style="color:purple;">This post has no comments yet. Be the first to comment!</h5>
 <% else %>
   <h5>Comments:</h5>
-  <% @post.comments.each do |comment| %>
+  <% @post.reload.comments.each do |comment| %>
     <%= render 'comments/comment', comment: comment %>
   <% end %>
 <% end %>

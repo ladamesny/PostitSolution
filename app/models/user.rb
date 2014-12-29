@@ -9,4 +9,15 @@ class User < ActiveRecord::Base
   validates_presence_of :password, on: :create, length: {minimum: 5} #minimum is not working.
   validates_uniqueness_of :username
 
+  before_save :generate_slug
+
+  def generate_slug
+    self.slug = self.username.gsub(" ", "-").downcase
+  end
+
+  def to_param
+    self.slug
+  end
+  
+
 end
