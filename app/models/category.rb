@@ -15,7 +15,7 @@ class Category < ActiveRecord::Base
       category = Category.find_by slug: the_slug
       counter +=1
     end
-    self.slug = str.downcase
+    self.slug = the_slug
 
   end
 
