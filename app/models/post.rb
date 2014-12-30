@@ -25,7 +25,7 @@ def generate_slug!
     the_slug = to_slug(self.title)
     post = Post.find_by slug: the_slug
     counter = 2
-    while psot && post != self
+    while post && post != self
       the_slug = append_suffix(the_slug,counter)
       category = Post.find_by slug: the_slug
       counter +=1
