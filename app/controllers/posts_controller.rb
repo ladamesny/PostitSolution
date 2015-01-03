@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :vote]
   before_action :require_user, except: [:show, :index]
-  before_action :require_same_user, only: [:edit] 
+  before_action :require_creator, only: [:edit, :update] 
 
   def index
     @posts = Post.all
@@ -67,8 +67,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :url, :description, category_ids: [])
   end
 
-  def require_same_user
-    if current_user != @post.creator
+  def require_creator
+    unless logged_in? and (current_user == @post.creator || current_user.admin?) 
       flash[:error] = "You're not allowed to do that."
       redirect_to posts_path
     end

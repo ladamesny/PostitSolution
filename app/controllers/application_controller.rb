@@ -18,10 +18,17 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    if !logged_in?
+    if !logged_in? || !current_user.admin?
       flash[:error] = "Must be logged in to do that."
       redirect_to root_path
     end  
+  end
+
+  def require_admin
+    if !logged_in? || !current_user.admin?
+      flash[:error] = "You need admin rights to do that."
+      redirect_to root_path
+    end
   end
 
 end

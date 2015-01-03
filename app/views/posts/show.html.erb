@@ -4,7 +4,7 @@
   <%= render @post.categories %> 
 </p>
   <% if logged_in? %>
-    <% if @same_user %>
+    <% if @same_user || current_user.admin? %>
     <%=link_to 'Edit your post?', edit_post_path(@post), class: "btn btn-danger btn-small pull-right", style: "font-weight:bold;"%>
     <%end%>  
   <%end%>
