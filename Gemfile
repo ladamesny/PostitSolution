@@ -15,6 +15,9 @@ gem "font-awesome-sass"
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.5.3'
+gem 'emcee'
+gem 'polymer-rails'
+gem 'polymer-paper-rails', '~> 0.2.5'
 
 group :doc do
   gem 'sdoc', require: false

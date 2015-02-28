@@ -43,6 +43,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    emcee (1.0.10)
+      nokogiri (~> 1.0)
+      nokogumbo (~> 1.1)
+      rails (~> 4.0)
     erubis (2.7.0)
     execjs (2.2.2)
     font-awesome-rails (4.2.0.0)
@@ -63,10 +67,21 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_portile (0.6.2)
     minitest (5.5.0)
     multi_json (1.10.1)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    nokogumbo (1.3.0)
+      nokogiri
     pg (0.17.1)
     polyglot (0.3.5)
+    polymer-paper-rails (0.2.5)
+      polymer-rails (~> 0.2.5)
+    polymer-rails (0.2.7)
+      nokogiri (~> 1.6)
+      nokogumbo (~> 1.1)
+      rails (>= 3.1.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -141,11 +156,14 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.2.0)
   bootstrap_form
   coffee-rails (~> 4.0.0)
+  emcee
   font-awesome-rails
   font-awesome-sass
   jbuilder (~> 1.5.3)
   jquery-rails
   pg
+  polymer-paper-rails (~> 0.2.5)
+  polymer-rails
   pry
   quiet_assets
   rails (= 4.1.4)

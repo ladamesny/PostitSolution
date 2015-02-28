@@ -3,16 +3,21 @@
 <div class="well">
   <%= form_for(@post) do |f| %>
     <div class="control-group">
-    <%= f.label :title %>
-    <%= f.text_field :title%>
+      <paper-input label="Title">
+        <%= f.text_field :title%>
+      </paper-input>
     </div>
+    
     <div class="control-group">
-    <%= f.label :url %>
-    <%= f.text_field :url%>
+      <paper-input label="Url">
+        <%= f.text_field :url%>
+      </paper-input>
     </div>
+
     <div class="control-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, rows: 5 %>
+      <paper-input label="Description">
+        <%= f.text_area :description, rows: 5 %>
+      </paper-input>
     </div>
     <div class="control-group">
     <%= f.label "Categories" %>
@@ -22,7 +27,9 @@
     </div>
     <div class="control-group" style="margin-top:20px;">
       <%= f.submit(@post.new_record? ? 'Create Post' : 'Update Post', class: 'btn btn-small btn-primary')%>
-      <%= link_to 'Cancel', posts_path, class: "btn btn-small btn-warning", style:"margin-left:20px;" %>
+      <%= link_to (posts_path) do %>
+        <paper-button class="hover">Cancel</paper-button>
+      <% end %>
     </div>
 <% end %>
 </div>
