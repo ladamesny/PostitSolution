@@ -7,7 +7,7 @@ FactoryGirl.define do
       comment.post = FactoryGirl.build(:post)
     end
 
-    factory :invalid_comment
+    factory :invalid_comment do
       body nil
     end
   end
